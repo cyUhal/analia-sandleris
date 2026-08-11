@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { CATEGORIES_DATA, WORKS } from '../data';
 import { Work } from '../types';
-import { ArrowLeft, ArrowRight, X, ZoomIn, ZoomOut, Edit2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, X, ZoomIn, ZoomOut } from 'lucide-react';
 
 const renderSeriesTitleContent = (title: string) => {
   if (!title) return null;
@@ -613,19 +613,6 @@ export default function Obras() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => {
-                    setEditGridUrl(selectedWork.imageUrl || '');
-                    setEditViewUrl(selectedWork.fullImageUrl || '');
-                    setEditTitle(selectedWork.title || '');
-                    setIsEditing(true);
-                  }}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-paper/10 flex items-center justify-center hover:bg-paper hover:text-ink hover:border-paper transition-all cursor-pointer bg-white/5 backdrop-blur-xs text-paper"
-                  aria-label="Editar"
-                  title="Personalizar imágenes de esta obra"
-                >
-                  <Edit2 size={18} />
-                </button>
-                <button
-                  onClick={() => {
                     if (zoomScale > 1) {
                       setZoomScale(1);
                       setPanPosition({ x: 0, y: 0 });
@@ -843,164 +830,6 @@ export default function Obras() {
             <div className={`hidden md:block text-center w-full text-[9px] font-sans uppercase tracking-[0.25em] text-paper/20 pointer-events-none mt-2 transition-opacity duration-300 ${isZoomed ? 'opacity-20' : 'opacity-100'}`}>
               Arrastra la foto para recorrer la obra  •  Usa las flechas ← → para cambiar
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Premium Image Customization Modal overlay */}
-      <AnimatePresence>
-        {isEditing && selectedWork && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#0b0b0b]/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsEditing(false);
-            }}
-          >
-            <motion.div 
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-[#121212] border border-paper/10 text-paper rounded-sm p-6 sm:p-8 max-w-lg w-full shadow-2xl relative font-sans"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button 
-                onClick={() => setIsEditing(false)}
-                className="absolute top-4 right-4 text-paper/40 hover:text-paper cursor-pointer p-1"
-                aria-label="Cerrar editor"
-              >
-                <X size={18} />
-              </button>
-
-              <h4 className="text-sm uppercase tracking-[0.3em] font-black text-accent mb-2">Personalizar Fotos</h4>
-              <p className="text-xs text-paper/60 mb-6 leading-relaxed">
-                Define qué imágenes se asocian a <span className="italic text-paper font-semibold">"{editTitle}"</span>. 
-                Permite poner una imagen diferente para la miniatura y otra alternativa para el visor ampliado.
-              </p>
-
-              <form onSubmit={(e) => {
-                e.preventDefault();
-                handleSaveCustomImage(editGridUrl, editViewUrl, editTitle);
-              }} className="space-y-4">
-                <div>
-                  <label className="block text-[9px] uppercase tracking-wider font-bold text-paper/40 mb-1 leading-none">Título de la Obra</label>
-                  <input 
-                    type="text" 
-                    value={editTitle}
-                    onChange={(e) => setEditTitle(e.target.value)}
-                    className="w-full bg-[#181818] border border-paper/10 rounded-xs px-3 py-2 text-xs text-paper focus:outline-hidden focus:border-accent font-sans transition-all"
-                    placeholder="Título de la obra (ej. sin titulo)"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-[9px] uppercase tracking-wider font-bold text-paper/40 mb-1.5 leading-none">Imagen en Galería (Miniatura)</label>
-                  <div className="flex gap-2">
-                    <input 
-                      type="text" 
-                      value={editGridUrl}
-                      onChange={(e) => setEditGridUrl(e.target.value)}
-                      className="flex-1 bg-[#181818] border border-paper/10 rounded-xs px-3 py-2 text-xs text-paper/80 focus:outline-none focus:border-accent font-mono transition-all"
-                      placeholder="URL o sube un archivo local..."
-                      required
-                    />
-                    <label className="px-3 py-2 border border-paper/10 bg-white/5 hover:bg-white/10 active:scale-95 text-[9px] uppercase tracking-widest rounded-xs cursor-pointer transition-all flex items-center justify-center shrink-0 text-paper font-black text-center min-w-[100px]">
-                      {isUploading ? 'subiendo...' : 'Subir Foto'}
-                      <input 
-                        type="file" 
-                        accept="image/*" 
-                        className="hidden" 
-                        disabled={isUploading}
-                        onChange={async (e) => {
-                          const file = e.target.files?.[0];
-                          if (file) {
-                            try {
-                              setIsUploading(true);
-                              const b64 = await compressAndResizeImage(file, 1200);
-                              setEditGridUrl(b64);
-                            } catch (err) {
-                              alert('Error al procesar la foto');
-                            } finally {
-                              setIsUploading(false);
-                            }
-                          }
-                        }}
-                      />
-                    </label>
-                  </div>
-                  <p className="text-[9px] text-paper/30 mt-1 leading-normal">
-                    La imagen compacta que se muestra en la grilla principal del catálogo de obras.
-                  </p>
-                </div>
-
-                <div>
-                  <label className="block text-[9px] uppercase tracking-wider font-bold text-paper/40 mb-1.5 leading-none">Imagen de Vista Ampliada (Visor / Perspectiva)</label>
-                  <div className="flex gap-2">
-                    <input 
-                      type="text" 
-                      value={editViewUrl}
-                      onChange={(e) => setEditViewUrl(e.target.value)}
-                      className="flex-1 bg-[#181818] border border-paper/10 rounded-xs px-3 py-2 text-xs text-paper/80 focus:outline-none focus:border-accent font-mono transition-all"
-                      placeholder="URL o sube un archivo local..."
-                    />
-                    <label className="px-3 py-2 border border-paper/10 bg-white/5 hover:bg-white/10 active:scale-95 text-[9px] uppercase tracking-widest rounded-xs cursor-pointer transition-all flex items-center justify-center shrink-0 text-paper font-black text-center min-w-[100px]">
-                      {isUploading ? 'subiendo...' : 'Subir Foto'}
-                      <input 
-                        type="file" 
-                        accept="image/*" 
-                        className="hidden" 
-                        disabled={isUploading}
-                        onChange={async (e) => {
-                          const file = e.target.files?.[0];
-                          if (file) {
-                            try {
-                              setIsUploading(true);
-                              const b64 = await compressAndResizeImage(file, 1600);
-                              setEditViewUrl(b64);
-                            } catch (err) {
-                              alert('Error al procesar la foto');
-                            } finally {
-                              setIsUploading(false);
-                            }
-                          }
-                        }}
-                      />
-                    </label>
-                  </div>
-                  <p className="text-[9px] text-paper/40 mt-1.5 leading-relaxed">
-                    Al pinchar/clicar en la grilla se desplegará <span className="text-accent font-black">esta otra imagen</span> para mostrar la obra en su escala o con un marco en perspectiva distante.
-                  </p>
-                </div>
-
-                <div className="flex gap-3 pt-4 border-t border-paper/5">
-                  <button
-                    type="button"
-                    onClick={handleResetDefaults}
-                    className="px-3 py-2 border border-rose-900/40 text-rose-300 rounded-xs text-[10px] uppercase tracking-wider hover:bg-rose-950/20 active:scale-95 transition-all text-center"
-                    title="Restablecer fotos por defecto de esta obra"
-                  >
-                    Restablecer
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setIsEditing(false)}
-                    className="flex-1 py-1 px-3 border border-paper/10 rounded-xs text-[10px] uppercase tracking-wider text-paper/60 hover:text-paper hover:bg-white/5 cursor-pointer font-bold transition-all text-center"
-                  >
-                    Cancelar
-                  </button>
-                  <button
-                    type="submit"
-                    className="flex-1 py-1 px-3 bg-paper text-[#0b0b0b] rounded-xs text-[10px] uppercase tracking-wider font-black hover:bg-accent transition-all cursor-pointer shadow-md text-center"
-                  >
-                    Guardar
-                  </button>
-                </div>
-              </form>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
