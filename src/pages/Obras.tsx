@@ -64,26 +64,20 @@ export default function Obras() {
   const { category } = useParams();
   const navigate = useNavigate();
   
-  // Dynamic works with localStorage persistence
-  const [customWorks, setCustomWorks] = useState<Work[]>(() => {
-    const saved = localStorage.getItem('analia_custom_works');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        const overriddenWorks = WORKS.map(w => {
-          const override = parsed.find((p: any) => p.id === w.id);
-          return override ? { ...w, ...override } : w;
-        });
-        const addedWorks = parsed.filter((p: any) => !WORKS.some(w => w.id === p.id));
-        return [...overriddenWorks, ...addedWorks];
-      } catch (e) {
-        return WORKS;
-      }
-    }
-    return WORKS;
-  });
+  // Works state synchronized directly with static WORKS
+  const [customWorks, setCustomWorks] = useState<Work[]>(WORKS);
 
-  const [filteredWorks, setFilteredWorks] = useState<Work[]>(customWorks);
+  useEffect(() => {
+    // Clear any stale local storage overrides
+    try {
+      localStorage.removeItem('analia_custom_works');
+    } catch (e) {
+      // ignore
+    }
+    setCustomWorks(WORKS);
+  }, []);
+
+  const [filteredWorks, setFilteredWorks] = useState<Work[]>(WORKS);
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   const [zoomScale, setZoomScale] = useState(1);
   const [panPosition, setPanPosition] = useState({ x: 0, y: 0 });
@@ -95,12 +89,6 @@ export default function Obras() {
   const [viewMode, setViewMode] = useState<'detail' | 'perspective'>('perspective');
   const [isUploading, setIsUploading] = useState(false);
   const [isDraggingOver, setIsDraggingOver] = useState(false);
-
-  // Customization modal state
-  const [isEditing, setIsEditing] = useState(false);
-  const [editGridUrl, setEditGridUrl] = useState('');
-  const [editViewUrl, setEditViewUrl] = useState('');
-  const [editTitle, setEditTitle] = useState('');
 
   const compressAndResizeImage = (file: File, maxWidth = 1600): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -324,67 +312,6 @@ export default function Obras() {
       document.body.style.overflow = 'unset';
     };
   }, [selectedWork, filteredWorks]);
-
-  const handleSaveCustomImage = (gridUrl: string, viewUrl: string, updatedTitle: string) => {
-    if (!selectedWork) return;
-    const exists = customWorks.some(w => w.id === selectedWork.id);
-    let updated: Work[];
-    if (exists) {
-      updated = customWorks.map(w => {
-        if (w.id === selectedWork.id) {
-          return { 
-            ...w, 
-            imageUrl: gridUrl, 
-            fullImageUrl: viewUrl || undefined,
-            title: updatedTitle
-          };
-        }
-        return w;
-      });
-    } else {
-      updated = [
-        ...customWorks,
-        {
-          ...selectedWork,
-          imageUrl: gridUrl,
-          fullImageUrl: viewUrl || undefined,
-          title: updatedTitle
-        }
-      ];
-    }
-    setCustomWorks(updated);
-    localStorage.setItem('analia_custom_works', JSON.stringify(updated.map(w => ({
-      id: w.id,
-      imageUrl: w.imageUrl,
-      fullImageUrl: w.fullImageUrl,
-      title: w.title,
-      category: w.category,
-      technique: w.technique,
-      year: w.year,
-      dimensions: w.dimensions,
-      seriesTitle: w.seriesTitle
-    }))));
-    
-    setSelectedWork({
-      ...selectedWork,
-      imageUrl: gridUrl,
-      fullImageUrl: viewUrl || undefined,
-      title: updatedTitle
-    });
-    setIsEditing(false);
-  };
-
-  const handleResetDefaults = () => {
-    localStorage.removeItem('analia_custom_works');
-    setCustomWorks(WORKS);
-    if (selectedWork) {
-      const original = WORKS.find(w => w.id === selectedWork.id);
-      if (original) {
-        setSelectedWork(original);
-      }
-    }
-    setIsEditing(false);
-  };
 
   // 1. Antes del return, verifica qué tiene la imagen:
   if (selectedWork) {
@@ -689,6 +616,7 @@ export default function Obras() {
                   title={zoomScale > 1 ? "Arrastra para recorrer la obra • Haz clic para ajustar" : "Haz clic para ampliar y recorrer la obra"}
                 >
                   <img
+                    key={`lightbox-img-${selectedWork.id}`}
                     src={selectedWork.fullImageUrl || selectedWork.imageUrl}
                     alt={selectedWork.title || "Obra de arte"}
                     className="max-h-[68vh] sm:max-h-[72vh] md:max-h-[76vh] w-full max-w-[96vw] object-contain shadow-[0_25px_60px_rgba(0,0,0,0.85)] border border-paper/10 ring-1 ring-white/10 select-none pointer-events-none origin-center"

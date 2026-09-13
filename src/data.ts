@@ -34,7 +34,7 @@ export const CATEGORIES_DATA: Category[] = [
   { 
     id: '2011-2006', 
     name: '2011 - 2006', 
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_11_r2z4ba.jpg',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789308749/ana%20sandleris/desi_9_qmuo9l.png',
     description: 'Texto que identifique el periodo.',
     startYear: 2006,
     endYear: 2011
@@ -61,35 +61,36 @@ export const CATEGORIES = ['All', ...CATEGORIES_DATA.map(c => c.name)];
 
 export const WORKS: Work[] = [
   // --- ACRÍLICO ---
+  // --- Verticales (2026 - 2019) ---
   {
-    id: 'a19',
+    id: 'a23',
     title: 'sin titulo',
     category: 'Acrílico',
     technique: 'Acrílico sobre tela',
     year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631458/ana%20sandleris/6_emvfun.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631486/ana%20sandleris/6_sfyml8.jpg',
-    dimensions: '50 x 160 cm'
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631460/ana%20sandleris/9_tke0ml.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631488/ana%20sandleris/9_kaigwk.jpg',
+    dimensions: '160 x 50 cm'
   },
   {
-    id: 'a20',
+    id: 'a37',
     title: 'sin titulo',
     category: 'Acrílico',
     technique: 'Acrílico sobre tela',
     year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631459/ana%20sandleris/8_lbiqig.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631488/ana%20sandleris/8_hzpzpc.jpg',
-    dimensions: '160 x 280 cm'
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789305971/ana%20sandleris/desi_5_k5qt9k.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789305688/ana%20sandleris/tres_uklgwx.jpg',
+    dimensions: '160 x 50 cm'
   },
   {
-    id: 'a21',
+    id: 'a33',
     title: 'sin titulo',
     category: 'Acrílico',
     technique: 'Acrílico sobre tela',
     year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631459/ana%20sandleris/7_azq4dk.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631487/ana%20sandleris/7_rarigr.jpg',
-    dimensions: '50 x 160 cm'
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631465/ana%20sandleris/11_emiev8.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789306231/ana%20sandleris/tres_2_wk6xb4.jpg',
+    dimensions: '160 x 50 cm'
   },
   {
     id: 'a22',
@@ -102,46 +103,6 @@ export const WORKS: Work[] = [
     dimensions: '160 x 50 cm'
   },
   {
-    id: 'a23',
-    title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631460/ana%20sandleris/9_tke0ml.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631488/ana%20sandleris/9_kaigwk.jpg',
-    dimensions: '160 x 50 cm'
-  },
-  {
-    id: 'a24',
-    title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631461/ana%20sandleris/13_fictsw.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631490/ana%20sandleris/13_x9gzey.jpg',
-    dimensions: '160 x 280 cm'
-  },
-  {
-    id: 'a25',
-    title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631461/ana%20sandleris/10_jfiwk3.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631488/ana%20sandleris/10_ow6kk1.jpg',
-    dimensions: '160 x 50 cm'
-  },
-  {
-    id: 'a26',
-    title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631461/ana%20sandleris/15_cyhokx.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631491/ana%20sandleris/15_xkgw6o.jpg',
-    dimensions: '50 x 160 cm'
-  },
-  {
     id: 'a27',
     title: 'sin titulo',
     category: 'Acrílico',
@@ -152,6 +113,38 @@ export const WORKS: Work[] = [
     dimensions: '160 x 50 cm'
   },
   {
+    id: 'a35',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631461/ana%20sandleris/10_jfiwk3.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631488/ana%20sandleris/10_ow6kk1.jpg',
+    dimensions: '160 x 50 cm'
+  },
+
+  // --- Horizontales (2026 - 2019) ---
+  {
+    id: 'a38',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789307589/ana%20sandleris/desi_6_vp9dia.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789307586/ana%20sandleris/tres_3_pauk1j.jpg',
+    dimensions: '50 x 160 cm'
+  },
+  {
+    id: 'a39',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789307587/ana%20sandleris/desi_7_aauux8.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789307605/ana%20sandleris/tres_4_gacd4c.jpg',
+    dimensions: '50 x 160 cm'
+  },
+  {
     id: 'a28',
     title: 'sin titulo',
     category: 'Acrílico',
@@ -159,6 +152,16 @@ export const WORKS: Work[] = [
     year: '2024',
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631462/ana%20sandleris/1_bii0rk.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631484/ana%20sandleris/1_jrapip.jpg',
+    dimensions: '50 x 160 cm'
+  },
+  {
+    id: 'a32',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1787773705/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_93_osuep1.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631484/ana%20sandleris/2_hyrc1v.jpg',
     dimensions: '50 x 160 cm'
   },
   {
@@ -172,16 +175,6 @@ export const WORKS: Work[] = [
     dimensions: '50 x 160 cm'
   },
   {
-    id: 'a30',
-    title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631464/ana%20sandleris/5_wvmwhu.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631486/ana%20sandleris/5_aa0uwx.jpg',
-    dimensions: '50 x 160 cm'
-  },
-  {
     id: 'a31',
     title: 'sin titulo',
     category: 'Acrílico',
@@ -192,24 +185,64 @@ export const WORKS: Work[] = [
     dimensions: '50 x 160 cm'
   },
   {
-    id: 'a32',
+    id: 'a30',
     title: 'sin titulo',
     category: 'Acrílico',
     technique: 'Acrílico sobre tela',
     year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631464/ana%20sandleris/2_pbvkcw.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631485/ana%20sandleris/3_olxa7g.jpg',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631464/ana%20sandleris/5_wvmwhu.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631486/ana%20sandleris/5_aa0uwx.jpg',
     dimensions: '50 x 160 cm'
   },
   {
-    id: 'a33',
+    id: 'a19',
     title: 'sin titulo',
     category: 'Acrílico',
     technique: 'Acrílico sobre tela',
     year: '2024',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631465/ana%20sandleris/11_emiev8.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631489/ana%20sandleris/11_pe4sga.jpg',
-    dimensions: '160 x 50 cm'
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631458/ana%20sandleris/6_emvfun.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631486/ana%20sandleris/6_sfyml8.jpg',
+    dimensions: '50 x 160 cm'
+  },
+  {
+    id: 'a21',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631459/ana%20sandleris/7_azq4dk.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631487/ana%20sandleris/7_rarigr.jpg',
+    dimensions: '50 x 160 cm'
+  },
+  {
+    id: 'a20',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631459/ana%20sandleris/8_lbiqig.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631488/ana%20sandleris/8_hzpzpc.jpg',
+    dimensions: '160 x 280 cm'
+  },
+  {
+    id: 'a24',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631461/ana%20sandleris/13_fictsw.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631490/ana%20sandleris/13_x9gzey.jpg',
+    dimensions: '160 x 280 cm'
+  },
+  {
+    id: 'a26',
+    title: 'sin titulo',
+    category: 'Acrílico',
+    technique: 'Acrílico sobre tela',
+    year: '2024',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631461/ana%20sandleris/15_cyhokx.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1784631491/ana%20sandleris/15_xkgw6o.jpg',
+    dimensions: '50 x 160 cm'
   },
 
   {
@@ -428,35 +461,25 @@ export const WORKS: Work[] = [
 
   // --- COLLAGE (10 works) ---
   {
-    id: 'c1',
+    id: 'c28',
     title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2009',
-    dimensions: '170 x 260 cm',
-    seriesTitle: 'SERIE ESCENARIOS',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_11_r2z4ba.jpg',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074939/ana%20sandleris/2011-2006B_5_uiq5ix.jpg',
+    category: 'Técnica mixta',
+    technique: 'Técnica mixta',
+    year: '2006 - 2007',
+    dimensions: '15 x 13,5 cm',
+    seriesTitle: 'SERIE POSTALES DEL CAMINO',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789308791/ana%20sandleris/desi_10_iy2lok.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789308749/ana%20sandleris/tres_5_ssxtrs.jpg',
   },
   {
-    id: 'c2',
+    id: 'c29',
     title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2008',
-    dimensions: '130 x 170 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_12_pcojsl.jpg',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/2011-2006B_6_hdm2z6.jpg',
-  },
-  {
-    id: 'c3',
-    title: 'sin titulo',
-    category: 'Acrílico',
-    technique: 'Acrílico sobre tela',
-    year: '2009',
-    dimensions: '170 x 130 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785075347/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_10_y5nw8e.jpg',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074939/ana%20sandleris/2011-2006B_4_w97lur.jpg',
+    category: 'Técnica mixta',
+    technique: 'Técnica mixta',
+    year: '2006 - 2007',
+    dimensions: '15 x 13,5 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789308749/ana%20sandleris/desi_9_qmuo9l.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789308817/ana%20sandleris/tres_6_l0626g.jpg',
   },
   {
     id: 'c4',
@@ -465,7 +488,6 @@ export const WORKS: Work[] = [
     technique: 'Técnica mixta',
     year: '2006 - 2007',
     dimensions: '15 x 13,5 cm',
-    seriesTitle: 'SERIE POSTALES DEL CAMINO',
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082003/ana%20sandleris/11_k20ccs.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082172/ana%20sandleris/11_ldj6s7.jpg',
   },
@@ -478,16 +500,6 @@ export const WORKS: Work[] = [
     dimensions: '15 x 13,5 cm',
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082004/ana%20sandleris/12_pnzujx.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082120/ana%20sandleris/18_zfa9wx.jpg',
-  },
-  {
-    id: 'c6',
-    title: 'sin titulo',
-    category: 'Técnica mixta',
-    technique: 'Técnica mixta',
-    year: '2006 - 2007',
-    dimensions: '15 x 13,5 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082004/ana%20sandleris/15_cvryu0.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082175/ana%20sandleris/15_eaalzp.jpg',
   },
   {
     id: 'c7',
@@ -508,16 +520,6 @@ export const WORKS: Work[] = [
     dimensions: '15 x 13,5 cm',
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082004/ana%20sandleris/14_ytqbhx.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082174/ana%20sandleris/14_xfmg1a.jpg',
-  },
-  {
-    id: 'c9',
-    title: 'sin titulo',
-    category: 'Técnica mixta',
-    technique: 'Técnica mixta',
-    year: '2006 - 2007',
-    dimensions: '15 x 13,5 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082005/ana%20sandleris/17_qxg88x.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082175/ana%20sandleris/17_vj8f0y.jpg',
   },
   {
     id: 'c10',
@@ -686,8 +688,8 @@ export const WORKS: Work[] = [
     technique: 'Centro Cultural Dodeca',
     year: '2006',
     dimensions: 'Colección Engelman-Ost',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082007/ana%20sandleris/23_e4dtzy.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785082122/ana%20sandleris/23_ed0pzx.jpg',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789309330/ana%20sandleris/desi_11_zfydmk.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789309527/ana%20sandleris/tres_8_ytplhl.jpg',
   },
   {
     id: 'c27',
@@ -701,7 +703,7 @@ export const WORKS: Work[] = [
   },
 
   // --- DIBUJO ---
-  // SERIE DE LA MAGIA (8 works)
+  // SERIE DE LA MAGIA (12 works)
   {
     id: 'd1',
     title: 'sin titulo I',
@@ -783,8 +785,48 @@ export const WORKS: Work[] = [
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785265509/ana%20sandleris/7_mj6ag1.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785265573/ana%20sandleris/7_xdkng0.jpg',
   },
+  {
+    id: 'd1_9',
+    title: 'sin titulo IX',
+    category: 'Dibujo',
+    technique: 'Acrílico sobre tela',
+    year: '2004',
+    dimensions: '100 x 130 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789301393/ana%20sandleris/magia_p05lps.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789301393/ana%20sandleris/magia_p05lps.png',
+  },
+  {
+    id: 'd1_10',
+    title: 'sin titulo X',
+    category: 'Dibujo',
+    technique: 'Acrílico sobre tela',
+    year: '2004',
+    dimensions: '130 x 170 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_12_pcojsl.jpg',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/2011-2006B_6_hdm2z6.jpg',
+  },
+  {
+    id: 'd1_11',
+    title: 'sin titulo XI',
+    category: 'Dibujo',
+    technique: 'Acrílico sobre tela',
+    year: '2004',
+    dimensions: '170 x 130 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785075347/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_10_y5nw8e.jpg',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074939/ana%20sandleris/2011-2006B_4_w97lur.jpg',
+  },
+  {
+    id: 'd1_12',
+    title: 'sin titulo XII',
+    category: 'Dibujo',
+    technique: 'Acrílico sobre tela',
+    year: '2004',
+    dimensions: '170 x 260 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074938/ana%20sandleris/Dise%C3%B1o_sin_t%C3%ADtulo_11_r2z4ba.jpg',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785074939/ana%20sandleris/2011-2006B_5_uiq5ix.jpg',
+  },
 
-  // SERIE VICTORIA DE LA ~DES~-ILUSIÓN (8 works)
+  // SERIE VICTORIA DE LA ~DES~-ILUSIÓN (9 works)
   {
     id: 'd3',
     title: 'sin titulo I',
@@ -856,7 +898,16 @@ export const WORKS: Work[] = [
     technique: 'Técnica mixta',
     year: '2003 - 2004',
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785265509/ana%20sandleris/16_owvmld.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785265576/ana%20sandleris/10_glrej3.jpg',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785265582/ana%20sandleris/18_r7yrhq.jpg',
+  },
+  {
+    id: 'd11',
+    title: 'sin titulo IX',
+    category: 'Dibujo',
+    technique: 'Técnica mixta',
+    year: '2003 - 2004',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789302049/ana%20sandleris/desi_co3qw6.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1785265577/ana%20sandleris/11_dbpyyl.jpg',
   },
 
   // SERIE OTROS NOMBRES OTROS RECUERDOS
@@ -941,69 +992,17 @@ export const WORKS: Work[] = [
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366027/ana%20sandleris/2002-1995a_xa74pn.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366065/ana%20sandleris/6_btlpxs.jpg',
   },
-  // --- GRABADO (6 works) ---
   {
-    id: 'g1',
-    title: 'sin titulo I',
-    category: 'Grabado',
-    technique: 'Grabado',
-    year: '2000',
-    dimensions: '10 x 15 cm',
-    seriesTitle: 'GRABADO',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365841/ana%20sandleris/8_evq8wp.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366068/ana%20sandleris/9_lsukxw.jpg',
+    id: 'on9',
+    title: 'sin titulo IX',
+    category: 'Dibujo',
+    technique: 'Técnica mixta',
+    year: '1997 - 2002',
+    dimensions: '30 x 27 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789304074/ana%20sandleris/desi_1_eaiyz3.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789304073/ana%20sandleris/magia2_1_ojv3sh.jpg',
   },
-  {
-    id: 'g2',
-    title: 'sin titulo II',
-    category: 'Grabado',
-    technique: 'Grabado',
-    year: '2000',
-    dimensions: '10 x 15 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365842/ana%20sandleris/9_cg4jkr.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366069/ana%20sandleris/10_jyuwml.jpg',
-  },
-  {
-    id: 'g3',
-    title: 'sin titulo III',
-    category: 'Grabado',
-    technique: 'Grabado',
-    year: '2000',
-    dimensions: '10 x 15 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365843/ana%20sandleris/10_taomxx.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366070/ana%20sandleris/11_sd7gth.jpg',
-  },
-  {
-    id: 'g4',
-    title: 'sin titulo IV',
-    category: 'Grabado',
-    technique: 'Grabado',
-    year: '2000',
-    dimensions: '10 x 15 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365844/ana%20sandleris/11_f20scp.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366046/ana%20sandleris/12_pkimfl.jpg',
-  },
-  {
-    id: 'g5',
-    title: 'sin titulo V',
-    category: 'Grabado',
-    technique: 'Grabado',
-    year: '2000',
-    dimensions: '10 x 15 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365846/ana%20sandleris/12_ks53t8.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366048/ana%20sandleris/13_vzorbd.jpg',
-  },
-  {
-    id: 'g6',
-    title: 'sin titulo VI',
-    category: 'Grabado',
-    technique: 'Grabado',
-    year: '2000',
-    dimensions: '10 x 15 cm',
-    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365846/ana%20sandleris/13_oh8kvb.png',
-    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366049/ana%20sandleris/14_lduquc.jpg',
-  },
-  // --- ACRÍLICO (7 works) ---
+  // --- ACRÍLICO (9 works) ---
   {
     id: 'ac1',
     title: 'sin titulo I',
@@ -1074,6 +1073,26 @@ export const WORKS: Work[] = [
     dimensions: '50 x 60 cm',
     imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786365848/ana%20sandleris/15_w46r1p.png',
     fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1786366051/ana%20sandleris/16_hxq5ui.jpg',
+  },
+  {
+    id: 'ac8',
+    title: 'sin titulo VIII',
+    category: 'Pintura',
+    technique: 'Acrílico sobre tela',
+    year: '2001 - 1999',
+    dimensions: '50 x 60 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789304349/ana%20sandleris/desi_2_jjl2az.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789304348/ana%20sandleris/magia2_2_lte8ir.jpg',
+  },
+  {
+    id: 'ac9',
+    title: 'sin titulo IX',
+    category: 'Pintura',
+    technique: 'Acrílico sobre tela',
+    year: '2001 - 1999',
+    dimensions: '50 x 60 cm',
+    imageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789304349/ana%20sandleris/desi_3_hyjnj0.png',
+    fullImageUrl: 'https://res.cloudinary.com/dnwhnbfrd/image/upload/v1789304347/ana%20sandleris/magia2_3_jc1kyx.jpg',
   }
 ];
 
@@ -1107,8 +1126,8 @@ export const PRESS_ARTICLES: PressArticle[] = [
     source: 'Canal 5 (TNU)', 
     date: '2015',
     type: 'Entrevista',
-    summary: 'Videoentrevista especializada conducida por Eduardo Alvariza, donde la artista repasa sus referentes técnicos, sus procesos en el taller y las claves estéticas de su producción plástica.',
-    link: 'https://www.elmonitorplastico.com/programa/26-12-2015' 
+    summary: 'Gustavo Fernández nos invita a entrar en los talleres y espacios de creación de algunos de los artistas plásticos más destacados de Montevideo. A través de un recorrido íntimo por sus trayectorias, sus universos personales y sus procesos creativos, la serie revela cómo nacen sus obras y las historias que se encuentran detrás de cada producción. Un acercamiento al arte contemporáneo uruguayo desde la mirada de sus propios protagonistas.',
+    link: 'https://www.youtube.com/watch?v=3GuyZ8hyW3o&t=4s' 
   },
   { 
     title: 'Analía Sandleris, en La Conversación', 
