@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FileText, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { FileText, ArrowRight } from 'lucide-react';
 
 export default function Bio() {
   return (
@@ -43,16 +44,14 @@ export default function Bio() {
       </div>
 
       <div className="clear-both pt-16 md:pt-24 flex justify-center">
-        <a 
-          href="https://docs.google.com/document/d/e/2PACX-1vStijoY4fvvrTkNvYAX09DLeSH3wmjihY8qttX8tDttfI56fRHULNFUBbWwn2yQjZfdQurgNTFh6DUv/pub"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link 
+          to="/curriculum"
           className="inline-flex items-center gap-3 px-8 py-4 bg-ink text-paper text-xs uppercase tracking-[0.4em] font-sans font-black hover:bg-accent transition-all duration-300 group shadow-lg"
         >
           <FileText size={16} />
           Ver Currículum
-          <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-        </a>
+          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+        </Link>
       </div>
     </div>
   );

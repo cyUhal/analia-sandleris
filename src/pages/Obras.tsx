@@ -534,7 +534,7 @@ export default function Obras() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.4em] text-paper/40">
-                {selectedWork.category}  —  {filteredWorks.findIndex(w => w.id === selectedWork.id) + 1} / {filteredWorks.length}
+                {filteredWorks.findIndex(w => w.id === selectedWork.id) + 1} / {filteredWorks.length}
               </div>
 
               <div className="flex items-center gap-3">

@@ -11,6 +11,7 @@ import Obras from './pages/Obras';
 import Bio from './pages/Bio';
 import Prensa from './pages/Prensa';
 import Contacto from './pages/Contacto';
+import Curriculum from './pages/Curriculum';
 
 // Helper to scroll to top on every route change
 function ScrollToTop() {
@@ -33,6 +34,8 @@ export default function App() {
             <Route path="/obras" element={<Obras />} />
             <Route path="/obras/:category" element={<Obras />} />
             <Route path="/bio" element={<Bio />} />
+            <Route path="/curriculum" element={<Curriculum />} />
+            <Route path="/cv" element={<Curriculum />} />
             <Route path="/prensa" element={<Prensa />} />
             <Route path="/contacto" element={<Contacto />} />
           </Routes>
